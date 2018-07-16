@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Reading libraries\nlibrary(tidyr)\nlibrary(caret)\nlibrary(data.table)\n\n# Reading data\ndf <- read.delim(\"TPM_table.txt\", sep = \"\\t\", row.names = 1)\n\n# Removing rows with 0 values (low-expression genes)\ndf$X <- NULL\nrow_sub = apply (df[, 1:8], 1, function(row) all(row != 0))\nnewDF <- df[row_sub,]\n\n# Removing low variance features (i.e. all values are between 0.5 standard deviations)\nrow_sub = apply(newDF, 1, function(row) all(var(row) > 0.5))\nnewDF <- newDF[row_sub,]\n\n# Putting row names in column and writing dataset\nsetDT(newDF, keep.rownames = TRUE)\ncolnames(newDF)[colnames(newDF) == \"rn\"] <- \"Genes\"\nwrite.table(newDF, \"model_data.txt\", sep = \"\\t\")\n",
+    "created" : 1531505115668.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1532115043",
+    "id" : "D9830AA6",
+    "lastKnownWriteTime" : 1531505060,
+    "last_content_update" : 1531505060,
+    "path" : "~/Documents/HYRS/mouse_project/data_wrangling.R",
+    "project_path" : "data_wrangling.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

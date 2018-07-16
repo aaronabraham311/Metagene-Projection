@@ -1,0 +1,9 @@
+sample	path	time
+G3M19LEG	G3M19LEG.kallisto	D5
+G3M5CM	G3M5CM.kallisto	D0
+G3M5LEG	G3M5LEG.kallisto	D5
+RMS1	RMS1.kallisto	D5
+RMS3	RMS3.kallisto	D5
+RMS_3	RMS_3.kallisto	D5
+T_LEFT	T_LEFT.kallisto	D0
+T_LEG	T_LEG.kallisto	D5
