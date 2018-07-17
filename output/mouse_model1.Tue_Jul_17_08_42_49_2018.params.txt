@@ -1,4 +1,4 @@
-Metagene Projection Run on  Mon_Jul_16_14:58:06_2018
+Metagene Projection Run on  Tue_Jul_17_08:42:49_2018
   
 Model dataset: 
 model.dataset.table
@@ -33,7 +33,7 @@ postprojnorm= TRUE
 heatmap.row.norm= FALSE
 heatmap.cmap.type= 6
 high.conf.thres= 0.3
-output.dir= /Users/aaronabraham/Documents/HYRS/mouse_project/output
+output.dir= /Users/aaronabraham/Documents/HYRS/mouse_project/output/
 col= steelblue2 red steelblue2 red
 symbs= 21 21 22 22
 symbol.scaling= 0.55

@@ -89,7 +89,7 @@ nchar.phen           <-    9
 postprojnorm         <-    TRUE
 heatmap.row.norm     <-    FALSE
 heatmap.cmap.type    <-    6
-output.dir           <-    "/Users/aaronabraham/Documents/HYRS/mouse_project/output"
+output.dir           <-    "/Users/aaronabraham/Documents/HYRS/mouse_project/output/"
 high.conf.thres      <-    0.3
 kernel               <-    "radial"
 cost                 <-    1
