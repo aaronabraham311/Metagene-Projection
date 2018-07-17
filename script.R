@@ -56,7 +56,7 @@ source(MP.library.location, verbose=T, max.deparse.length=9999)   # Load Metagen
 
 model.dataset.table <-  # Defines the input model dataset and pre-processing options for it
   list( # Subset of samples from Ross et al 2003 (PMID: 12730115) and Ross et al 2004 (PMID: 15226186)
-    gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/model_data_gct.gct",  # Gene expression data
+    gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/model_data.gct",  # Gene expression data
     cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/model_classes.cls",  # Annotation of classes
     column.subset = "ALL",        # Which subset (samples or phenotypes) to include (default: "ALL" : all of them)
     column.sel.type = "samples",  # Selection type: "sample": or "phenotypes"

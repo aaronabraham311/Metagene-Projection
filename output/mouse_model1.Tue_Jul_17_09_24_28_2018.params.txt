@@ -1,0 +1,45 @@
+Metagene Projection Run on  Tue_Jul_17_09:24:28_2018
+  
+Model dataset: 
+model.dataset.table
+gct.file /Users/aaronabraham/Documents/HYRS/mouse_project/model_data.gct
+cls.file /Users/aaronabraham/Documents/HYRS/mouse_project/model_classes.cls
+column.subset ALL
+column.sel.type samples
+thres NULL
+ceil NULL
+fold 2
+delta NULL
+norm 6
+  
+Test dataset: 1
+V1
+gct.file /Users/aaronabraham/Documents/HYRS/mouse_project/test_data.gct
+cls.file /Users/aaronabraham/Documents/HYRS/mouse_project/test_classes.cls
+column.subset ALL
+column.sel.type samples
+thres NULL
+ceil NULL
+norm 6
+   
+Parameters:
+identifier= mouse_model1
+k.proj= 2
+alg= NMF.div
+niter= 2000
+seed= 1234
+nchar.phen= 9
+postprojnorm= TRUE
+heatmap.row.norm= FALSE
+heatmap.cmap.type= 6
+high.conf.thres= 0.3
+output.dir= /Users/aaronabraham/Documents/HYRS/mouse_project/output/
+col= steelblue2 red steelblue2 red
+symbs= 21 21 22 22
+symbol.scaling= 0.55
+kernel= radial
+cost= 1
+gamma= 5
+theta= 0
+lambda= 1
+model.set.refinement= TRUE

@@ -2154,6 +2154,7 @@ MP.Projection.Plots <- function(
   gs.descs <- dataset$descs
   sample.names <- dataset$names
   plot.filename <- paste(output.2D.proj.plot, ".pdf", sep="", collapse="")
+  pdf(file=plot.filename, height = 20, width = 30)
   
   dim(m) 
   
@@ -2332,13 +2333,13 @@ MP.Projection.Plots <- function(
   if (.Platform$OS.type == "windows") {
     savePlot(filename = plot.filename, type ="jpeg", device = dev.cur())
   } else {
-    pdf(file=plot.filename, height = 20, width = 30)
     dev.off()
   }
   
   # Heat map plot
   plot.filename <- paste(output.heatmap.plot, ".pdf", sep="", collapse="")
   height <- ifelse(k.proj > 50, 20, 0.50*k.proj + 7)
+  pdf(file=plot.filename, height = height, width = 25)
   
   if (.Platform$OS.type == "windows") {
     plot.filename <- output.heatmap.plot
@@ -2351,7 +2352,6 @@ MP.Projection.Plots <- function(
   if (.Platform$OS.type == "windows") {
     savePlot(filename = plot.filename, type ="jpeg", device = dev.cur())
   } else {
-    pdf(file=plot.filename, height = height, width = 25)
     dev.off()
   }
   
