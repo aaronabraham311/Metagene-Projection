@@ -49,15 +49,15 @@
 # <identifier>.all.gct = consolidated model + test dataset in the space of common genes (gct dataset)
 # <identifier>.prelim.pred.txt = preliminary projection-based SVM prediction results (used in refinement) (text file)
 
-MP.library.location  <-  "/Users/aaronabraham/Documents/HYRS/mouse_project/MP.Library.R"
+MP.library.location  <-  "/Users/aaronabraham/Documents/HYRS/mouse_project/script/MP.Library.R"
 source(MP.library.location, verbose=T, max.deparse.length=9999)   # Load Metagene Projection library 
 
 # Define model & test datasets and parameters
 
 model.dataset.table <-  # Defines the input model dataset and pre-processing options for it
   list( # Subset of samples from Ross et al 2003 (PMID: 12730115) and Ross et al 2004 (PMID: 15226186)
-    gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/model_data.gct",  # Gene expression data
-    cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/model_classes.cls",  # Annotation of classes
+    gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/model_data.gct",  # Gene expression data
+    cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/model_classes.cls",  # Annotation of classes
     column.subset = "ALL",        # Which subset (samples or phenotypes) to include (default: "ALL" : all of them)
     column.sel.type = "samples",  # Selection type: "sample": or "phenotypes"
     thres = "NULL",                   # Threshold to apply to dataset before projection
@@ -69,8 +69,8 @@ model.dataset.table <-  # Defines the input model dataset and pre-processing opt
 test.datasets.table <- # Defines one or more input test datasets and pre-processing options for each of them
   list( 
     list( # Using same model dataset as the test dataset
-      gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/test_data.gct", # Test gene expression data
-      cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/test_classes.cls",  # Test class annotation
+      gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/test_data.gct", # Test gene expression data
+      cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/test_classes.cls",  # Test class annotation
       column.subset = "ALL",       # Which subset (sample numbers( to include (default: "ALL" : all of them)
       column.sel.type = "samples", # Selection type: "sample": or "phenotypes"
       thres = "NULL",                  # Threshold to apply to dataset before projection
@@ -95,7 +95,7 @@ kernel               <-    "radial"
 cost                 <-    1
 gamma                <-    5
 model.set.refinement <-    TRUE #Can be true, but for test run it will be false
-symbol.scaling       <-    0.55
+symbol.scaling       <-    0.75
 
 # These are the symbols and colors to use for each phenotype in the model and test sets 
 #          model samples:   square symbols
