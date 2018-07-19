@@ -90,16 +90,8 @@ m_df <- m_df[m_df$Genes %in% h_df$Genes, ]
 
 combined_df <- merge(h_df, m_df, by = "Genes")
 
+# Removing low variance features
+row_sub = apply(combined_df, 1, function(row) all(var(row[2:61]) > 0))
+combined_df <- combined_df[row_sub,]
+
 write.table(combined_df, "data/combined_data.txt", sep = "\t")
-
-# Removing rows with 0 values (low-expression genes)
-df$X <- NULL
-row_sub = apply (df[, 2:12], 1, function(row) all(row != 0))
-newDF <- df[row_sub,]
-
-# Removing low variance features (i.e. all values are between 0.5 standard deviations)
-row_sub = apply(newDF, 1, function(row) all(var(row[2:12]) > 0))
-newDF <- newDF[row_sub,]
-
-# Putting row names in column and writing dataset
-write.table(newDF, "model_data.txt", sep = "\t")
