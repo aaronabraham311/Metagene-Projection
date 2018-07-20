@@ -57,7 +57,7 @@ source(MP.library.location, verbose=T, max.deparse.length=9999)   # Load Metagen
 model.dataset.table <-  # Defines the input model dataset and pre-processing options for it
   list( # Subset of samples from Ross et al 2003 (PMID: 12730115) and Ross et al 2004 (PMID: 15226186)
     gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/model_data.gct",  # Gene expression data
-    cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/model_classes.cls",  # Annotation of classes
+    cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/model_data_classes.cls",  # Annotation of classes
     column.subset = "ALL",        # Which subset (samples or phenotypes) to include (default: "ALL" : all of them)
     column.sel.type = "samples",  # Selection type: "sample": or "phenotypes"
     thres = "NULL",                   # Threshold to apply to dataset before projection
@@ -70,7 +70,7 @@ test.datasets.table <- # Defines one or more input test datasets and pre-process
   list( 
     list( # Using same model dataset as the test dataset
       gct.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/test_data.gct", # Test gene expression data
-      cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/test_classes.cls",  # Test class annotation
+      cls.file = "/Users/aaronabraham/Documents/HYRS/mouse_project/data/test_data_classes.cls",  # Test class annotation
       column.subset = "ALL",       # Which subset (sample numbers( to include (default: "ALL" : all of them)
       column.sel.type = "samples", # Selection type: "sample": or "phenotypes"
       thres = "NULL",                  # Threshold to apply to dataset before projection
@@ -100,12 +100,28 @@ symbol.scaling       <-    0.75
 # These are the symbols and colors to use for each phenotype in the model and test sets 
 #          model samples:   square symbols
 #                  color         symbol      phenotype
-legend.list <- c("steelblue2",    21,        # D5 
-                 "red",           21,        # D0
+legend.list <- c("green",         21,        # ARS 
+                 "steelblue2",    21,        # ERS 
+                 "red",           21,        # CBS
+                 "orange",        21,        # ES
+                 "red4",          21,        # FMT
+                 "pink",          21,        # MSS
+                 "violet",        21,        # LMS
+                 "cyan",          21,        # MLS
+                 "blue",          21,        # OS
+                 "black",         21,        # D5
                  #          test samples:    cicle symbols
                  #                  color         symbol      phenotype                 
-                 "steelblue2",    22,        # D5 
-                 "red",           22        # D0
+                 "green",         22,        # ARS 
+                 "steelblue2",    22,        # ERS 
+                 "red",           22,        # CBS
+                 "orange",        22,        # ES
+                 "red4",          22,        # FMT
+                 "pink",          22,        # MSS
+                 "violet",        22,        # LMS
+                 "cyan",          22,        # MLS
+                 "blue",          22,        # OS
+                 "black",         22         # D5
 )
 
 col <- legend.list[seq(1, length(legend.list), 2)]

@@ -417,7 +417,7 @@ MetaGene.Projection <- function(
   c.vec <- col[1:n.phen]
   par(mar = c(0, 0, 0, 0))
   plot(c(0,0), c(1, 1), xlim = c(0, 1), ylim = c(0, 1), axes=F, type="n", xlab = "", ylab="")
-  legend(x=0, y=1, legend=leg.txt, bty="n", xjust=0, yjust= 1, pch = p.vec, pt.bg = c.vec, col = "black", cex = symbol.scaling*1.35, pt.cex=symbol.scaling*3)
+  legend(x=0, y=1, legend=leg.txt, bty="n", xjust=0, yjust= 1, pch = p.vec, pt.bg = c.vec, col = "black", cex = symbol.scaling*2.00, pt.cex=symbol.scaling*3, x.intersp = 2, y.intersp = 5)
   
   plot.filename <- paste(output.dir, identifier, ".htree", sep="")
   jpeg(filename = plot.filename, type ="quartz")
@@ -470,7 +470,7 @@ MetaGene.Projection <- function(
   c.vec <- col[1:n.phen]
   par(mar = c(0, 0, 0, 0))
   plot(c(0,0), c(1, 1), xlim = c(0, 1), ylim = c(0, 1), axes=F, type="n", xlab = "", ylab="")
-  legend(x=0, y=1, legend=leg.txt, bty="n", xjust=0, yjust= 1, pch = p.vec, pt.bg = c.vec, col = "black", cex = symbol.scaling*1.35, pt.cex=symbol.scaling*3)
+  legend(x=0, y=1, legend=leg.txt, bty="n", xjust=0, yjust= 1, pch = p.vec, pt.bg = c.vec, col = "black", cex = symbol.scaling*1.35, pt.cex=symbol.scaling*3, x.intersp = 2, y.intersp = 5)
   
   plot.filename <- paste(output.dir, identifier, ".H.htree", sep="")
   jpeg(filename = plot.filename, type ="quartz")
@@ -2328,7 +2328,7 @@ MP.Projection.Plots <- function(
   
   par(mar = c(0, 0, 0, 0))
   plot(c(0,0), c(1, 1), xlim = c(0, 1), ylim = c(0, 1), axes=F, type="n", xlab = "", ylab="")
-  legend(x=0, y=1, legend=leg.txt, bty="n", xjust=0, yjust= 1, pch = p.vec, pt.bg = c.vec, col = "black", cex = symbol.scaling*1.35, pt.cex=symbol.scaling*3)
+  legend(x=0, y=1, legend=leg.txt, bty="n", xjust=0, yjust= 1, pch = p.vec, pt.bg = c.vec, col = "black", cex = symbol.scaling*1.35, pt.cex=symbol.scaling*3, x.intersp = 2, y.intersp = 5)
   
   if (.Platform$OS.type == "windows") {
     savePlot(filename = plot.filename, type ="jpeg", device = dev.cur())
