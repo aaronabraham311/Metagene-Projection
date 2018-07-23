@@ -2357,40 +2357,41 @@ MP.Projection.Plots <- function(
   
   # heat map sorted inside each phenotype 
   
-  m2 <- m
-  gs.names2 <- gs.names
-  sample.names2 <- sample.names
-  max.classes <- max(class.labels)
-  plot.filename <- paste(output.heatmap.sorted.plot, ".pdf", sep="", collapse="")
+  #m2 <- m
+  #gs.names2 <- gs.names
+  #sample.names2 <- sample.names
+  #max.classes <- max(class.labels)
+  #plot.filename <- paste(output.heatmap.sorted.plot, ".pdf", sep="", collapse="")
   
-  for (k in 1:max.classes) {
-    if (sum(class.labels==k) > 1) {
-      m3 <- m2[,class.labels==k]   
-      sn <- sample.names2[class.labels==k]
-      dist.matrix <- dist(t(m3))
-      HC <- hclust(dist.matrix, method="complete")
-      m3 <- m3[, HC$order]
-      sn <- sn[HC$order]
-      m2[,class.labels==k] <- m3
-      sample.names2[class.labels==k] <- sn
-    }
-  }
+  #for (k in 1:max.classes) {
+  #if (sum(class.labels==k) > 1) {
+  #m3 <- m2[,class.labels==k]   
+  # sn <- sample.names2[class.labels==k]
+  #   dist.matrix <- dist(t(m3))
+  #   HC <- hclust(dist.matrix, method="complete")
+  #   m3 <- m3[, HC$order]
+  #   sn <- sn[HC$order]
+  #   m2[,class.labels==k] <- m3
+  #   sample.names2[class.labels==k] <- sn
+  # }
+  #}
   
-  height <- ifelse(k.proj > 50, 20, 0.50*k.proj + 7)
+#height <- ifelse(k.proj > 50, 20, 0.50*k.proj + 7)
   
-  if (.Platform$OS.type == "windows") {
-    plot.filename <- output.heatmap.sorted.plot
-  } else {
-    pdf(file=plot.filename, height = height, width = 25)
-  }
+#if (.Platform$OS.type == "windows") {
+  #plot.filename <- output.heatmap.sorted.plot
+    #} #else {
+    #pdf(file=plot.filename, height = height, width = 25)
+    #}
   
-  MP.HeatMapPlot(V = m2, row.names = gs.names2, col.labels = class.labels, col.classes = class.phen, col.names = sample.names2, main= paste(title, " (sorted inside each class)", sep=""), sub = " ", xlab=" ", ylab=" ", row.norm = heatmap.row.norm,  cmap.type = heatmap.cmap.type, char.rescale = 1) 
+#MP.HeatMapPlot(V = m2, row.names = gs.names2, col.labels = class.labels, col.classes = class.phen, col.names = sample.names2, main= paste(title, " (sorted inside each class)", sep=""), sub = " ", xlab=" ", ylab=" ", row.norm = heatmap.row.norm,  cmap.type = heatmap.cmap.type, char.rescale = 1) 
   
-  if (.Platform$OS.type == "windows") {
-    savePlot(filename = plot.filename, type ="jpeg", device = dev.cur())
-  } else {
-    dev.off()
-  }
+#if (.Platform$OS.type == "windows") {
+#savePlot(filename = plot.filename, type ="jpeg", device = dev.cur())
+#}# else 
+#{
+#dev.off()
+#}
   
 }
 
