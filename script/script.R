@@ -81,7 +81,7 @@ test.datasets.table <- # Defines one or more input test datasets and pre-process
 # Define parameters for this specific run (see detailed definitions below)
 
 identifier           <-    "mouse_model1"   
-k.proj               <-    2     #K value for NMF
+k.proj               <-    10     #K value for NMF
 alg                  <-    "NMF.div"
 niter                <-    2000
 seed                 <-    1234
@@ -94,7 +94,7 @@ high.conf.thres      <-    0.3
 kernel               <-    "radial"
 cost                 <-    1
 gamma                <-    5
-model.set.refinement <-    TRUE #Can be true, but for test run it will be false
+model.set.refinement <-    FALSE #Can be true, but for test run it will be false
 symbol.scaling       <-    0.75
 
 # These are the symbols and colors to use for each phenotype in the model and test sets 
